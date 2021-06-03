@@ -16,6 +16,8 @@ export default function App() {
   const [modalvisible, setModalvisible] = useState(false);
 
   const onPressHandler = (courseGoals) => {
+    if (courseGoals.length === 0) return;
+
     setGoals((currentGoals) => [
       ...currentGoals,
       { uid: Math.random().toString(), value: courseGoals },
